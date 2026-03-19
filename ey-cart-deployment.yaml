@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fitness-deployment
+  name: ey-cart-deployment
   namespace: kgateway-ns
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fitness
+      app: ey-cart
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,13 +16,13 @@ spec:
   template:
     metadata:
       labels:
-        app: fitness
+        app: ey-cart
     spec:
       containers:
-        - name: fitness
-          image: muralisocial123/fitness-app:v1.0.1
+        - name: ey-cart
+          image: muralisocial123/ey-cart:v1.1.0
           ports:
-            - containerPort: 5000
+            - containerPort: 3000
           resources:
             limits:
               memory: "512Mi"
@@ -34,12 +34,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fitness-service
+  name: ey-cart-service
   namespace: kgateway-ns
 spec:
   selector:
-    app: fitness
+    app: ey-cart
   ports:
-    - port: 5000
-      targetPort: 5000
+    - port: 3000
+      targetPort: 3000
   type: ClusterIP
