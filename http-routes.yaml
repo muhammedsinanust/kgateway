@@ -16,7 +16,7 @@ spec:
           urlRewrite:
             path:
               type: ReplacePrefixMatch
-              value: /
+              replacePrefixMatch: /
       backendRefs:
         - name: fitness-service
           port: 5000
@@ -39,7 +39,7 @@ spec:
           urlRewrite:
             path:
               type: ReplacePrefixMatch
-              value: /flower
+              replacePrefixMatch: /flower
       backendRefs:
         - name: flower-service
           port: 3015
