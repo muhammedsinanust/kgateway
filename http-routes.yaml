@@ -39,7 +39,7 @@ spec:
           urlRewrite:
             path:
               type: ReplacePrefixMatch
-              value: /
+              value: /flower
       backendRefs:
         - name: flower-service
           port: 3015
