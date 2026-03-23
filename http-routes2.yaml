@@ -10,12 +10,6 @@ spec:
         - path:
             type: PathPrefix
             value: /sinan
-      filters:
-        - type: URLRewrite
-          urlRewrite:
-            path:
-              type: ReplacePrefixMatch
-              replacePrefixMatch: /
       backendRefs:
         - name: portfolio-service
           port: 80
