@@ -10,6 +10,12 @@ spec:
         - path:
             type: PathPrefix
             value: /fit
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
       backendRefs:
         - name: fitness-tracker-service
           port: 80
