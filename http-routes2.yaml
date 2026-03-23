@@ -9,9 +9,9 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /sinan
+            value: /fit
       backendRefs:
-        - name: portfolio-service
+        - name: fitness-tracker-service
           port: 80
 
     - matches:
@@ -33,6 +33,6 @@ spec:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: fitness-tracker-service
+        - name: portfolio-service
           port: 80
           
