@@ -9,9 +9,15 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /retail
+            value: /sinan
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
       backendRefs:
-        - name: capsule-service
+        - name: portfolio-service
           port: 80
 
     - matches:
