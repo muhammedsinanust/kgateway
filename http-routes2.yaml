@@ -19,3 +19,17 @@ spec:
       backendRefs:
         - name: fitness-tracker-service
           port: 80
+
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /retail
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /retail
+      backendRefs:
+        - name: capsule-service
+          port: 80
