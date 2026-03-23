@@ -9,14 +9,6 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /
-      backendRefs:
-        - name: fitness-tracker-service
-          port: 80
-
-    - matches:
-        - path:
-            type: PathPrefix
             value: /retail
       backendRefs:
         - name: capsule-service
@@ -29,3 +21,12 @@ spec:
       backendRefs:
         - name: hospital-service
           port: 80
+
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: fitness-tracker-service
+          port: 80
+          
