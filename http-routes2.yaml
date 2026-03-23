@@ -33,3 +33,17 @@ spec:
       backendRefs:
         - name: capsule-service
           port: 80
+
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /hospital
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: hospital-service
+          port: 80
